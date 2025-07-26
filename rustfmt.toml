@@ -1,0 +1,53 @@
+edition = "2021"
+style_edition = "2024"
+unstable_features = true
+
+error_on_line_overflow = true
+error_on_unformatted = true
+show_parse_errors = true
+
+blank_lines_upper_bound = 1
+brace_style = "PreferSameLine"
+hard_tabs = false
+indent_style = "Block"
+tab_spaces = 2
+max_width = 80
+newline_style = "Unix"
+
+group_imports = "StdExternalCrate"
+imports_granularity = "Crate"
+imports_indent = "Block"
+imports_layout = "HorizontalVertical"
+reorder_modules = true
+reorder_imports = true
+
+binop_separator = "Front"
+combine_control_expr = false
+comment_width = 100
+condense_wildcard_suffixes = true
+control_brace_style = "AlwaysSameLine"
+doc_comment_code_block_width = 100
+empty_item_single_line = true
+force_explicit_abi = false
+force_multiline_blocks = true
+format_code_in_doc_comments = true
+format_macro_bodies = true
+format_macro_matchers = true
+format_strings = true
+fn_params_layout = "Vertical"
+fn_single_line = true
+hex_literal_case = "Upper"
+match_arm_blocks = true
+match_arm_leading_pipes = "Always"
+match_block_trailing_comma = true
+merge_derives = true
+remove_nested_parens = true
+reorder_impl_items = true
+skip_macro_invocations = []
+use_field_init_shorthand = true
+use_try_shorthand = true
+where_single_line = true
+
+normalize_comments = true
+normalize_doc_attributes = true
+wrap_comments = true
