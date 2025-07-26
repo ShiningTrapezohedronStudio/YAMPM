@@ -1,6 +1,6 @@
 mod cli;
 mod config;
-mod curseforge;
+mod launchers;
 mod repl;
 
 use crate::repl::repl;
