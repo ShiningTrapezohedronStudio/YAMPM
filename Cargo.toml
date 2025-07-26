@@ -6,10 +6,10 @@ rust-version = "1.84.0"
 
 [dependencies]
 directories = "6.0.0"
-fasthash = "0.4.0"
-petgraph = "0.8.2"
-reqwest = { version = "0.12.22", features = ["json"] }
-tokio = { version = "1.46.1", features = ["full"] }
+# fasthash = "0.4.0"
+# petgraph = "0.8.2"
+# reqwest = { version = "0.12.22", features = ["json"] }
+# tokio = { version = "1.46.1", features = ["full"] }
 
 [lints.rust]
 unsafe_code = "forbid"
