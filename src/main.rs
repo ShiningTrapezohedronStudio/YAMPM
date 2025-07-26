@@ -1,19 +1,18 @@
-mod curseforge;
 mod cli;
 mod config;
+mod curseforge;
+mod repl;
 
-use rustyline::DefaultEditor;
+use crate::repl::repl;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-  DefaultEditor::new()?
-    .readline("YAMPM: ")
-    .map_err(|e| e.to_string())
-    .and_then(|input| {
-      if input.trim().is_empty() {
-        Err("Input cannot be empty".into())
-      } else {
-        Ok(())
-      }
-    })?;
-    Ok(())
+  repl()
+    .map_err(|e| {
+      eprintln!("Error: {}", e);
+      e
+    })
+    .and_then(|_| {
+      println!("Exiting REPL.");
+      Ok(())
+    })
 }
