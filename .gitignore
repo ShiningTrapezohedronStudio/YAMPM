@@ -274,3 +274,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,vim,emacs,visualstudiocode,rust,rust-analyzer,intellij+all
+
+!/Cargo.lock

@@ -5,6 +5,24 @@ edition = "2021"
 rust-version = "1.84.0"
 
 [dependencies]
+directories = "6.0.0"
+fasthash = "0.4.0"
+petgraph = "0.8.2"
+reqwest = { version = "0.12.22", features = ["json"] }
+tokio = { version = "1.46.1", features = ["full"] }
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+nursery = { level = "warn", priority = -1 }
+correctness = { level = "deny", priority = 10 }
+suspicious = { level = "deny", priority = 20 }
+style = { level = "deny", priority = 30 }
+complexity = { level = "deny", priority = 40 }
+perf = { level = "deny", priority = 50 }
+pedantic = { level = "deny", priority = 60 }
+cargo = { level = "deny", priority = 70 }
 
 [profile.release]
 opt-level = 3
