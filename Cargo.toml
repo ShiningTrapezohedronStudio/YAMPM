@@ -16,12 +16,23 @@ categories = ["games", "games::tools", "development::build-tools"]
 include = ["src/**", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "CHANGELOG.md"]
 
 [dependencies]
+clap = "4.5.41"
 directories = "6.0.0"
 rustyline = "16.0.0"
+
 # fasthash = "0.4.0"
 # petgraph = "0.8.2"
 # reqwest = { version = "0.12.22", features = ["json"] }
 # tokio = { version = "1.46.1", features = ["full"] }
+
+[dependencies.config]
+version = "0.15.13"
+default-features = false
+features = ["toml", "ron"]
+
+[dependencies.serde]
+version =  "1"
+features = ["derive"]
 
 [lints.rust]
 missing_docs = "allow"
@@ -29,8 +40,10 @@ missing_docs = "allow"
 dead_code = "warn"
 unused = "warn"
 
-non_camel_case_types = "forbid"
-non_upper_case_globals = "forbid"
+# Causes issues with Serde Proc Macro
+non_camel_case_types = "warn"
+non_upper_case_globals = "warn"
+
 non_snake_case = "forbid"
 unreachable_code = "forbid"
 unsafe_code = "forbid"

@@ -1,4 +1,6 @@
 mod curseforge;
+mod cli;
+mod config;
 
 use rustyline::DefaultEditor;
 
