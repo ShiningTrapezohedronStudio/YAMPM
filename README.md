@@ -1,2 +1,2 @@
-# Blessed
-A Minecraft Modpack Manager and Builder
+# YAMPM
+> Yet Another Modpack Manager
