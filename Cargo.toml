@@ -30,9 +30,17 @@ version = "0.15.13"
 default-features = false
 features = ["toml", "ron"]
 
+[dependencies.reqwest]
+version = "0.12.22"
+features = ["json"]
+
 [dependencies.serde]
 version =  "1"
 features = ["derive"]
+
+[dependencies.tokio]
+version = "1.46.1"
+features = ["full"]
 
 [lints.rust]
 missing_docs = "allow"
