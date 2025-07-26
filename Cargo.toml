@@ -1,8 +1,19 @@
 [package]
+rust-version = "1.84.0"
+edition = "2021"
+publish = false
+
 name = "yampm"
 version = "0.1.0"
-edition = "2021"
-rust-version = "1.84.0"
+description = "Yet Another Modpack Manager"
+repository = "github.com/ShiningTrapezohedronStudio/YAMPM"
+authors = ["Sophia Bitterstar <sophia@shiningtrapezohedron.com>"]
+license = "AGPL-3.0-or-later"
+readme = "README.md"
+
+keywords = ["minecraft", "modpack", "curseforge", "modrinth", "modpack manager"]
+categories = ["games", "games::tools", "development::build-tools"]
+include = ["src/**", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "CHANGELOG.md"]
 
 [dependencies]
 directories = "6.0.0"
@@ -12,7 +23,19 @@ directories = "6.0.0"
 # tokio = { version = "1.46.1", features = ["full"] }
 
 [lints.rust]
+missing_docs = "allow"
+
+dead_code = "warn"
+unused = "warn"
+
+non_camel_case_types = "forbid"
+non_upper_case_globals = "forbid"
+non_snake_case = "forbid"
+unreachable_code = "forbid"
 unsafe_code = "forbid"
+unused_lifetimes = "forbid"
+unused_variables = "forbid"
+unused_assignments = "forbid"
 
 [lints.clippy]
 nursery = { level = "warn", priority = -1 }
