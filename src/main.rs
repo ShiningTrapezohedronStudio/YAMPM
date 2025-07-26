@@ -5,11 +5,11 @@ mod sources;
 mod repl;
 
 // use crate::repl::repl;
-use crate::sources::modrinth::fetch_project;
+use crate::sources::modrinth;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-  let project = fetch_project("create").await?;
+  let project = modrinth::fetch_project("create").await?;
   println!("{:#?}", project);
 
   // repl()

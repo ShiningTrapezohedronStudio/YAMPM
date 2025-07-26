@@ -1,67 +1,6 @@
-use reqwest::Client;
 use serde::Deserialize;
 
-const ENDPOINT: &str = "https://api.modrinth.com/v2";
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum ClientSide {
-  Required,
-  Optional,
-  Unsupported,
-  Unknown,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum ServerSide {
-  Required,
-  Optional,
-  Unsupported,
-  Unknown,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum Status {
-  Approved,
-  Archived,
-  Rejected,
-  Draft,
-  Unlisted,
-  Processing,
-  Withheld,
-  Scheduled,
-  Private,
-  Unknown,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum RequestedStatus {
-  Approved,
-  Archived,
-  Unlisted,
-  Private,
-  Draft,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum ProjectType {
-  Mod,
-  Modpack,
-  ResourcePack,
-  Shader,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum MonetizationStatus {
-  Monetized,
-  Demonetized,
-  ForceDemonetized,
-}
+use super::enums::*;
 
 #[derive(Debug, Deserialize)]
 pub struct License {
@@ -129,12 +68,4 @@ pub struct Project {
   game_versions: Vec<String>,
   loaders: Vec<String>,
   gallery: Vec<GalleryImage>,
-}
-
-pub async fn fetch_project(project_id: &str) -> Result<Project, reqwest::Error> {
-  let url = format!("{ENDPOINT}/project/{project_id}");
-  let client = Client::new();
-  let resp = client.get(&url).send().await?;
-  let project = resp.json::<Project>().await?;
-  Ok(project)
 }
